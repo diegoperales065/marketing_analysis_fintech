@@ -26,6 +26,18 @@ description: Pipeline completo del TFM — desde datos en bruto hasta modelo fin
 5. Variables macroeconómicas vs target
 6. Documentar hallazgos clave
 
+## Fase 2.5 — Análisis Cuantitativo de Datos
+> Skill: `data-analysis`
+
+1. Validación de calidad (unknowns, tipos, integridad)
+2. Estadísticas descriptivas avanzadas (asimetría, curtosis, CV)
+3. Análisis agrupado por target (yes vs no)
+4. Análisis de conversión por segmento (job_type, education_level, etc.)
+5. Análisis de tendencias temporales (por mes de contacto)
+6. Análisis de contexto macroeconómico (correlación con target)
+7. Derivación de insights cuantificados
+8. Generación de informe estructurado en `informes/`
+
 ## Fase 3 — Feature Engineering & Preprocessing
 > Skill: `modeling` (sección 1)
 
