@@ -1,0 +1,152 @@
+# 🏷️ Semantic Renaming of Unknown Values — Veredicto Final
+
+> **Análisis basado en datos** — solo lectura, sin modificar [01_analisis_unknowns.ipynb](file:///c:/Users/jzs99/Desktop/marketing_analysis_fintech/jesus_data_clean/01_analisis_unknowns.ipynb)
+> **Script de soporte:** [02_semantic_renaming_analysis.py](file:///c:/Users/jzs99/Desktop/marketing_analysis_fintech/jesus_data_clean/02_semantic_renaming_analysis.py)
+> **Fecha:** 14/03/2026
+
+---
+
+## Resumen Ejecutivo
+
+Los valores "unknown" **no son ruido aleatorio**. Cada columna tiene un perfil demográfico, económico y conductual distinto que permite asignar un **nombre semántico preciso**. Estos nombres mejoran la interpretabilidad del modelo y comunican al algoritmo que estas categorías representan **perfiles reales de clientes**, no datos faltantes.
+
+---
+
+## Tabla de Renombrado Semántico
+
+| Columna | Actual | Nombre Semántico Propuesto | Conversión | n |
+|:--------|:------:|:---------------------------|:----------:|:---:|
+| `default` | `"unknown"` | **`"no_credit_record"`** | 5.15% | 8,596 |
+| `education` | `"unknown"` | **`"undisclosed_education"`** | 14.51% | 1,730 |
+| `job` | `"unknown"` | **`"undeclared_occupation"`** | 11.21% | 330 |
+| `marital` | `"unknown"` | **`"undisclosed_status"`** | 15.00% | 80 |
+
+---
+
+## Justificación Detallada por Columna
+
+### 1. `default`: `"unknown"` → **`"no_credit_record"`**
+
+> [!IMPORTANT]
+> Este es el campo con mayor volumen de unknowns (20.9%) y el más significativo estadísticamente (χ²=405, p≈0).
+
+**¿Por qué "no credit record" y no otra cosa?**
+
+| Métrica | `default=no` | `default=unknown` | Diferencia |
+|:--------|:---:|:---:|:---|
+| Edad media | 39.1 | **43.4** | +4.3 años mayor |
+| Conversión | 12.88% | **5.15%** | 2.5× menor conversión |
+| Blue-collar | 18.7% | **36.8%** | 2× más manual |
+| Nunca contactados antes | 95.5% | **99.3%** | Sin historial previo |
+| Casados | 57.2% | **72.9%** | Más conservadores |
+| Contacto celular | 66.8% | **50.8%** | Menos accesibles |
+| Euribor 3m | 3.447 | **4.281** | Peor contexto económico |
+| Education básica (4y+6y+9y) | 25.6% | **48.6%** | Casi el doble |
+
+**Perfil**: Clientes de **mayor edad**, predominantemente **blue-collar**, con **educación básica**, **casados**, sin historial crediticio formal registrado, contactados en **periodos de euribor alto** (contexto económico desfavorable). Su estatus crediticio nunca fue evaluado o registrado en el sistema — NO es que tengan un default, ni que estén libres de default, sino que **no existe registro**.
+
+**Descartamos**:
+- ❌ `"not_assessed"` — demasiado clínico, no comunica el porqué
+- ❌ `"credit_status_missing"` — implica error de datos (MAR), cuando es MNAR
+- ❌ `"unverified_credit"` — implica que se intentó verificar
+- ✅ `"no_credit_record"` — describe exactamente la realidad: no hay registro crediticio
+
+---
+
+### 2. `education`: `"unknown"` → **`"undisclosed_education"`**
+
+> [!TIP]
+> Este grupo convierte un 14.51% — **MÁS que el promedio del dataset** (11.3%). Los unknowns aquí son clientes valiosos.
+
+**Distribución de jobs dentro de education=unknown:**
+
+| Job | % |
+|:----|:---:|
+| Blue-collar | 26.2% |
+| Admin | 14.4% |
+| Technician | 12.3% |
+| **Student** | **9.7%** |
+| Services | 8.7% |
+| **Unknown job** | **7.6%** |
+
+**Co-ocurrencia con other unknowns:**
+- 31.7% también tienen `default=unknown`
+- 7.6% también tienen `job=unknown`
+
+**Perfil**: Mezcla de **trabajadores manuales**, **estudiantes** (que aún no tienen educación formal completa), y personas que **optan por no compartir** su nivel educativo. La alta tasa de conversión sugiere que son clientes **receptivos** pese a no declarar educación.
+
+**Descartamos**:
+- ❌ `"no_formal_education"` — falso, muchos sí la tienen
+- ❌ `"education_not_available"` — suena a error del sistema
+- ❌ `"mixed_education"` — no describe la causa
+- ✅ `"undisclosed_education"` — preciso: el cliente optó por no revelarlo
+
+---
+
+### 3. `job`: `"unknown"` → **`"undeclared_occupation"`**
+
+| Métrica | Valor |
+|:--------|:---:|
+| Edad media | 45.6 |
+| Conversión | 11.21% |
+| Education=unknown | **39.7%** |
+| Default=unknown | **46.1%** |
+| Casados | 70.9% |
+| Rango 41-60 años | **63.4%** |
+
+**Perfil**: Grupo pequeño (0.8%), edad media-alta, **fuertemente correlacionado con unknowns en educación y default** (clientes que en general no comparten información personal). Probablemente incluye **trabajadores informales**, **autónomos no registrados**, o personas que simplemente **rehúsan declarar** su ocupación.
+
+**Descartamos**:
+- ❌ `"unemployed"` — ya existe como categoría separada
+- ❌ `"informal_worker"` — asunción no verificable
+- ✅ `"undeclared_occupation"` — neutral, preciso, y refleja la causa real
+
+---
+
+### 4. `marital`: `"unknown"` → **`"undisclosed_status"`**
+
+| Métrica | Valor |
+|:--------|:---:|
+| Edad media | 40.3 (mediana 36) |
+| Conversión | **15.00%** |
+| University degree | 38.8% |
+| Education=unknown | 11.2% |
+| Job=unknown | 11.2% |
+
+**Perfil**: Solo 80 clientes (0.2%). Perfil **joven**, con **alta educación**, y la **conversión más alta** de todos los grupos unknown (15%). Son clientes que valoran su **privacidad personal** pero están **dispuestos a contratar** el depósito.
+
+**Descartamos**:
+- ❌ `"single"` — ya existe, y no podemos asumir
+- ❌ `"prefer_not_to_say"` — demasiado informal
+- ✅ `"undisclosed_status"` — profesional, neutro, y preciso
+
+---
+
+## Código de Implementación
+
+```python
+# Renombrado semántico de unknowns
+value_mapping = {
+    'default': {'unknown': 'no_credit_record'},
+    'education': {'unknown': 'undisclosed_education'},
+    'job': {'unknown': 'undeclared_occupation'},
+    'marital': {'unknown': 'undisclosed_status'}
+}
+
+for col, mapping in value_mapping.items():
+    df[col] = df[col].replace(mapping)
+```
+
+---
+
+## Impacto en el Modelo
+
+| Antes | Después | Beneficio |
+|:------|:--------|:----------|
+| `default="unknown"` | `default="no_credit_record"` | El modelo entiende que es un perfil sin historial, no ruido |
+| `education="unknown"` | `education="undisclosed_education"` | Preserva la señal de alta conversión de este grupo |
+| `job="unknown"` | `job="undeclared_occupation"` | Distingue de "unemployed" (que ya existe) |
+| `marital="unknown"` | `marital="undisclosed_status"` | Señal de privacidad ≠ dato faltante |
+
+> [!NOTE]
+> Cuando el modelo reciba estas categorías como features (via one-hot encoding o target encoding), cada nombre semántico generará una feature independiente que captura el **perfil real** del cliente, en vez de una categórica genérica "unknown" que enmascara información valiosa.
