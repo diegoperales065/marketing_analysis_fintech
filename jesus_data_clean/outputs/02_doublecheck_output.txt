@@ -1,0 +1,93 @@
+================================================================================
+  DOUBLE-CHECK: SEMANTIC RENAMING REPORT VERIFICATION
+================================================================================
+
+--- 1. Dataset Basics ---
+  [PASS] Row count after dedup
+  [PASS] Column count
+
+--- 2. DEFAULT Column Claims ---
+  [PASS] default unknown count ~8596
+  [PASS] default unknown % ~20.9%
+  [PASS] default=unknown age mean ~43.4
+  [PASS] default=no age mean ~39.1
+  [PASS] default=unknown conv ~5.15%
+  [PASS] default=no conv ~12.88%
+  [PASS] default=unknown blue-collar ~36.8%
+  [PASS] default=no blue-collar ~18.7%
+  [PASS] default=unknown never contacted ~99.3%
+  [PASS] default=no never contacted ~95.5%
+  [PASS] default=unknown married ~72.9%
+  [PASS] default=no married ~57.2%
+  [PASS] default=unknown cellular ~50.8%
+  [PASS] default=no cellular ~66.8%
+  [PASS] default=unknown euribor ~4.281
+  [PASS] default=no euribor ~3.447
+  [PASS] default=unknown basic edu ~48.6%
+  [PASS] default=no basic edu ~25.6%
+  [PASS] Chi-squared for default ~405
+  [PASS] Chi-squared p-value ~0
+
+--- 3. EDUCATION Column Claims ---
+  [PASS] education unknown count ~1730
+  [PASS] education=unknown conv ~14.5%
+  [PASS] education=unknown conv > overall (~11.3%)
+  [PASS] education=unknown blue-collar ~26.2%
+  [PASS] education=unknown student ~9.7%
+  [PASS] education=unknown & default=unknown ~31.7%
+  [PASS] education=unknown & job=unknown ~7.6%
+  [FAIL] Chi-squared for education ~18.6 ÔÇö Got 192.8
+
+--- 4. JOB Column Claims ---
+  [PASS] job unknown count ~330
+  [PASS] job unknown % ~0.8%
+  [PASS] job=unknown age mean ~45.6
+  [PASS] job=unknown conv ~11.21%
+  [PASS] job=unknown & education=unknown ~39.7%
+  [PASS] job=unknown & default=unknown ~46.1%
+  [PASS] job=unknown married ~70.9%
+  [PASS] job=unknown age 41-60 ~63.4%
+
+--- 5. MARITAL Column Claims ---
+  [PASS] marital unknown count ~80
+  [PASS] marital unknown % ~0.2%
+  [PASS] marital=unknown age mean ~40.3
+  [PASS] marital=unknown conv ~15.0%
+  [PASS] marital=unknown university ~38.8%
+
+--- 6. MNAR (Missing Not At Random) Validation ---
+  [PASS] MNAR confirmed: age distribution differs (p<0.001)
+  [PASS] MNAR confirmed: euribor differs (p<0.001)
+  [PASS] MNAR confirmed: contact method differs (p<0.001)
+
+--- 7. Naming Logic Validation ---
+  [PASS] default=yes only 3 cases (not a pool for unknowns)
+  [PASS] 'unemployed' exists as separate job category
+  [PASS] 'illiterate' exists separately (only 18 cases)
+  [PASS] 'no_credit_record' doesn't exist in default
+  [PASS] 'undisclosed_education' doesn't exist in education
+  [PASS] 'undeclared_occupation' doesn't exist in job
+  [PASS] 'undisclosed_status' doesn't exist in marital
+
+--- 8. Completeness Check ÔÇö Any unknowns we missed? ---
+  job: 330 unknowns (0.80%)
+  marital: 80 unknowns (0.19%)
+  education: 1730 unknowns (4.20%)
+  default: 8596 unknowns (20.88%)
+  housing: 990 unknowns (2.40%)
+  loan: 990 unknowns (2.40%)
+  [PASS] housing unknowns (990) = loan unknowns (990)
+  [PASS] housing/loan co-occur 100% (990 = 990)
+
+--- 9. Impact Tally ---
+  Total 'unknown' values to be renamed:  10736
+    default  ÔåÆ no_credit_record:          8596
+    education ÔåÆ undisclosed_education:     1730
+    job      ÔåÆ undeclared_occupation:      330
+    marital  ÔåÆ undisclosed_status:         80
+  housing/loan unknowns (to be REMOVED):  990
+
+================================================================================
+  VERIFICATION RESULT: 54 PASSED | 1 FAILED | 0 WARNINGS
+================================================================================
+  *** 1 CLAIM(S) NEED ATTENTION ***
