@@ -166,6 +166,23 @@ def limpieza_fintech(df_fintech):
     #Eliminar duplicados considerando todas las columnas excepto 'outcome'
     columnas_duplicados = df_fintech.columns.tolist()[:-1]
     df_fintech = df_fintech.drop_duplicates(subset=columnas_duplicados)
+
+    #Crear columna 'call_duration' con categorías basadas en la duración de la llamada
+    bins = [0, 60, 180, 300, 600, 1200, 5000]
+
+    labels = [
+    "0-1 min",
+    "1-3 min",
+    "3-5 min",
+    "5-10 min",
+    "10-20 min",
+    "20+ min"]
+
+    df_fintech["call_duration"] = pd.cut(
+    df_fintech["call_duration"],
+    bins=bins,
+    labels=labels,
+    ordered=True)
     
     #Transformar la columna contact_month a categorica ordenada
     orden_meses = [
