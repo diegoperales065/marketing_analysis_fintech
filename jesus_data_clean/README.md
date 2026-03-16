@@ -1,60 +1,43 @@
-# 🧹 Limpieza de Datos — Jesús
+# jesus_data_clean — Analisis de Datos (TFM)
 
-> Análisis y limpieza profesional del dataset `bank-additional_bank-additional-full.csv`
-> **Proyecto**: Marketing Analytics para Empresa Fintech — TFM
-
----
-
-## 📁 Estructura de Carpetas
+## Estructura
 
 ```
 jesus_data_clean/
 │
-├── 📓 notebooks/                         ← Entregables principales (Jupyter)
-│   ├── 01_analisis_unknowns.ipynb        — Auditoría de valores "unknown"
-│   └── 02_semantic_renaming_analysis.ipynb — Renombrado semántico de unknowns
+├── TAREA_1/
+│   ├── Tarea1_Notebook_Unificado.ipynb    ← Notebook unico con TODO el analisis
+│   │
+│   ├── fase_01_unknowns/                  ← Analisis de valores unknown
+│   │   ├── scripts/  (01, 02, 02_double_check)
+│   │   ├── notebooks/ (01, 02)
+│   │   ├── outputs/
+│   │   └── utils/
+│   │
+│   └── fase_02_analisis/                  ← Estadisticas, demografica, campana
+│       ├── scripts/  (03, 04, 05)
+│       ├── notebooks/ (03, 04, 05)
+│       └── outputs/
 │
-├── 🐍 scripts/                           ← Código fuente Python
-│   ├── 01_analisis_unknowns.py           — Script base del análisis de unknowns
-│   ├── 02_semantic_renaming_analysis.py  — Perfilado estadístico profundo
-│   └── 02_double_check.py               — Verificación automatizada (55 checks)
+├── informes/
+│   ├── Informe_Tarea1_Completo.docx       ← DOCX para tesis (10+ paginas)
+│   └── Informe_Tarea1_Resumen.docx        ← DOCX para companeros (3-4 paginas)
 │
-├── 📄 outputs/                           ← Resultados y logs de ejecución
-│   ├── 01_output_unknowns.txt            — Salida del análisis de unknowns
-│   ├── 02_semantic_output.txt            — Salida del perfilado semántico
-│   ├── 02_doublecheck_output.txt         — Resultado: 54/55 verificaciones OK
-│   ├── audit_output.txt                  — Salida de la auditoría CSV
-│   ├── audit_report_renaming_unknowns    — Reporte de renombrado
-│   ├── docx_content.txt                  — Contenido extraído del DOCX del compañero
-│   ├── nb_all_cells.txt                  — Volcado de celdas del notebook del compañero
-│   └── nb_relevant_cells.txt             — Celdas relevantes del notebook del compañero
-│
-├── 🔧 utils/                             ← Scripts auxiliares y generadores
-│   ├── generate_notebook_02.py           — Generador del notebook 02
-│   └── audit_csv.py                      — Auditoría general del CSV
-│
-└── 📖 README.md                          ← Este archivo
+└── README.md
 ```
 
----
+## Orden de lectura
 
-## 🔑 Resumen de Resultados
+**Opcion rapida**: Abrir directamente `TAREA_1/Tarea1_Notebook_Unificado.ipynb` — contiene todo.
 
-### Nombres Semánticos (Aprobados)
+**Opcion detallada** (por fases):
+1. `01_analisis_unknowns` → Conteo y significancia de unknowns
+2. `02_semantic_renaming_analysis` → Perfilado y propuesta de renombrado
+3. `03_estadisticas_descriptivas` → Descriptivas, outliers, correlaciones
+4. `04_relacion_demografica_suscripcion` → Edad, job, educacion vs suscripcion
+5. `05_impacto_campana` → Contactos, mes, duracion, poutcome, macro
 
-| Columna | `"unknown"` → | Nombre Semántico |
-|:--------|:---:|:---|
-| `default` | → | `no_credit_record` |
-| `education` | → | `undisclosed_education` |
-| `job` | → | `undeclared_occupation` |
-| `marital` | → | `undisclosed_status` |
-
-### Verificación: **54/55 checks PASSED** ✅
-
----
-
-## 📋 Orden de Lectura Recomendado
-
-1. `notebooks/01_analisis_unknowns.ipynb` — Auditoría inicial
-2. `notebooks/02_semantic_renaming_analysis.ipynb` — Renombrado semántico
-3. `outputs/02_doublecheck_output.txt` — Verificación de cifras
+## Decisiones Clave
+- **Unknowns**: Renombrado semantico (no NaN, no eliminacion)
+- **CSV**: Solo lectura. No se modifica el dataset original.
+- **Tests**: Chi2, Mann-Whitney U, Kruskal-Wallis, Spearman
