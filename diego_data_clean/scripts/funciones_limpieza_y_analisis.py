@@ -122,7 +122,7 @@ def exploracion_inicial(df, nombre=None, tipo=None):
         print('-' * 100)
         
         print("¿Cuáles son las estadísticas descriptivas básicas de las columnas categóricas?")
-        display(df.describe(include='object').fillna(''))
+        display(df.describe(include='object'))
         print('-' * 100)
         
         print("¿Cuántos valores nulos hay en cada columna del DataFrame?")
@@ -153,68 +153,62 @@ def exploracion_inicial(df, nombre=None, tipo=None):
 
 
 
+
+import pandas as pd
+
 def limpieza_fintech(df_fintech):
-    #Cambio de nombre de columnas para mayor claridad
-    df_fintech = df_fintech.rename(columns={'job':'job_type','marital':'marital_status','education':'education_level','loan':'has_personal_loan','housing':'has_housing_loan','month':'contact_month','day_of_week':'contact_day','contact':'contact_method','duration':'call_duration','default':'credit_default','campaign':'contact_attempts','pdays':'previously_contacted','previous':'previous_contacts','poutcome':'previous_campaign_outcome','y':'subscribed','euribor3m':'euribor_3m_rate','nr.employed':'total_employment','cons.price.idx':'consumer_price_index','emp.var.rate':'employment_variation_rate','cons.conf.idx':'consumer_confidence_index'})
+    # 0. Copia para evitar avisos de memoria
+    df_fintech = df_fintech.copy()
     
-    #Dividir euribor por 1000 (solo los que superen 100 porque las escalas estan mezcladas)
-    mask = df_fintech['euribor_3m_rate'] > 100
-    df_fintech.loc[mask, 'euribor_3m_rate'] = df_fintech.loc[mask, 'euribor_3m_rate'] / 1000
-    #Dividir consumer_price_index por 1000 (solo los que superen 1000 porque las escalas estan mezcladas)
-    mask = df_fintech['consumer_price_index'] > 1000
-    df_fintech.loc[mask, 'consumer_price_index'] = df_fintech.loc[mask, 'consumer_price_index'] / 1000
-    #Eliminar duplicados considerando todas las columnas excepto 'outcome'
-    columnas_duplicados = df_fintech.columns.tolist()[:-1]
+    # 1. Cambio de nombre de columnas
+    df_fintech = df_fintech.rename(columns={
+        'job':'job_type','marital':'marital_status','education':'education_level',
+        'loan':'has_personal_loan','housing':'has_housing_loan','month':'contact_month',
+        'day_of_week':'contact_day','contact':'contact_method','duration':'call_duration',
+        'default':'credit_default','campaign':'contact_attempts','pdays':'previously_contacted',
+        'previous':'previous_contacts','poutcome':'previous_campaign_outcome','y':'subscribed',
+        'euribor3m':'euribor_3m_rate','nr.employed':'total_employment',
+        'cons.price.idx':'consumer_price_index','emp.var.rate':'employment_variation_rate',
+        'cons.conf.idx':'consumer_confidence_index'
+    })
+
+    # --- NUEVA PARTE: Reemplazar 'unknown' por 'undisclosed' ---
+    cols_to_fix = ['job_type', 'marital_status', 'education_level', 'credit_default']
+    df_fintech[cols_to_fix] = df_fintech[cols_to_fix].replace('unknown', 'undisclosed')
+    # ----------------------------------------------------------
+
+    
+    # 2. Eliminar duplicados (excluyendo la variable objetivo)
+    columnas_duplicados = [c for c in df_fintech.columns if c != 'subscribed']
     df_fintech = df_fintech.drop_duplicates(subset=columnas_duplicados)
 
-    #Crear columna 'call_duration' con categorías basadas en la duración de la llamada
-    bins = [0, 60, 180, 300, 600, 1200, 5000]
-
-    labels = [
-    "0-1 min",
-    "1-3 min",
-    "3-5 min",
-    "5-10 min",
-    "10-20 min",
-    "20+ min"]
-
-    df_fintech["call_duration"] = pd.cut(
-    df_fintech["call_duration"],
-    bins=bins,
-    labels=labels,
-    ordered=True)
+    # 3. Agrupación de duración (Asegúrate de ejecutar esta celda de nuevo)
+    df_fintech["call_duration_group"] = pd.cut(
+        df_fintech["call_duration"], 
+        bins=[-1, 60, 180, 300, 600, 1200, 10000],
+        labels=["0-1 min", "2-3 min", "4-5 min", "6-10 min", "11-20 min", "21+ min"],
+        right=True
+    )
     
-    #Transformar la columna contact_month a categorica ordenada
-    orden_meses = [
-    'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
-
-    df_fintech['contact_month'] = pd.Categorical(
-    df_fintech['contact_month'],
-    categories=orden_meses,
-    ordered=True)
+    # 4. Categorical ordenados
+    orden_meses = ['mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+    df_fintech['contact_month'] = pd.Categorical(df_fintech['contact_month'], categories=orden_meses, ordered=True)
     
-    #Transformar la columna contact_day a categorica ordenada
     orden_dias = ['mon', 'tue', 'wed', 'thu', 'fri']
-
-    df_fintech['contact_day'] = pd.Categorical(
-    df_fintech['contact_day'],
-    categories=orden_dias,
-    ordered=True)
+    df_fintech['contact_day'] = pd.Categorical(df_fintech['contact_day'], categories=orden_dias, ordered=True)
     
-    #Eliminar filas con 'unknown' en las columnas de préstamos
+    # 5. Eliminar filas con 'unknown' en préstamos (estos se mantienen como 'unknown' para ser eliminados)
     df_fintech = df_fintech[(df_fintech["has_housing_loan"] != "unknown") & (df_fintech["has_personal_loan"] != "unknown")]
     
-    #Añadir columna 'is_new_campaign_client' con yes/no
+    # 6. Nuevas columnas
     df_fintech['is_new_campaign_client'] = (df_fintech['previous_contacts'] == 0).map({True: 'yes', False: 'no'})
-
-    #Crear columna 'high_contact_attempts' con yes/no
     df_fintech['high_contact_attempts'] = (df_fintech['contact_attempts'] > 3).map({True: 'yes', False: 'no'})
     
-    #Reordenar columnas para que 'subscribed' sea la última
-    col = df_fintech.pop('subscribed')
-    df_fintech['subscribed'] = col
+    # 7. Reordenar columna objetivo al final
+    if 'subscribed' in df_fintech.columns:
+        col_subscribed = df_fintech.pop('subscribed')
+        df_fintech['subscribed'] = col_subscribed
 
     return df_fintech
-
 
 
