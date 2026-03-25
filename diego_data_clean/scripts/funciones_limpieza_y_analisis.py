@@ -145,6 +145,9 @@ def exploracion_inicial(df, nombre=None, tipo=None):
         plt.show()
         print('-' * 100)
 
+        print("##Número de filas duplicadas (considerando todas las columnas)")
+        print(f"\tHay {df.duplicated().sum():,} filas duplicadas.")
+
         msno.heatmap(df, figsize = (6, 3), fontsize= 9)
         plt.show()
         print('-' * 100)
@@ -182,7 +185,7 @@ def limpieza_fintech(df_fintech):
     columnas_duplicados = [c for c in df_fintech.columns if c != 'subscribed']
     df_fintech = df_fintech.drop_duplicates(subset=columnas_duplicados)
 
-    # 3. Agrupación de duración (Asegúrate de ejecutar esta celda de nuevo)
+    # 3. Agrupación de duración de llamadas
     df_fintech["call_duration_group"] = pd.cut(
         df_fintech["call_duration"], 
         bins=[-1, 60, 180, 300, 600, 1200, 10000],
