@@ -1,0 +1,268 @@
+==========================================================================================
+  AUDITORÍA PROFESIONAL DEL DATASET — SOLO LECTURA
+==========================================================================================
+
+📂 Archivo: bank-additional_bank-additional-full.csv
+📐 Dimensiones: 41,188 filas × 21 columnas
+💾 Memoria total: 26.80 MB
+
+==========================================================================================
+  1. ESQUEMA DE DATOS — Tipos y clasificación
+==========================================================================================
+               dtype_pandas clasificación ejemplo_valor
+age                   int64      numérica            56
+job                  object    categórica     housemaid
+marital              object    categórica       married
+education            object    categórica      basic.4y
+default              object    categórica            no
+housing              object    categórica            no
+loan                 object    categórica            no
+contact              object    categórica     telephone
+month                object    categórica           may
+day_of_week          object    categórica           mon
+duration              int64      numérica           261
+campaign              int64      numérica             1
+pdays                 int64      numérica           999
+previous              int64      numérica             0
+poutcome             object    categórica   nonexistent
+emp.var.rate        float64      numérica        1.1000
+cons.price.idx      float64      numérica       93.9940
+cons.conf.idx       float64      numérica      -36.4000
+euribor3m           float64      numérica        4.8570
+nr.employed         float64      numérica     5191.0000
+y                    object    categórica            no
+
+==========================================================================================
+  2. ANÁLISIS DE VALORES NULOS (NaN)
+==========================================================================================
+✅ El dataset NO contiene valores NaN en ninguna columna.
+
+   Total NaN globales: 0 de 864,948 celdas (0.0000%)
+
+==========================================================================================
+  3. ANÁLISIS DE FILAS DUPLICADAS
+==========================================================================================
+   Filas duplicadas exactas: 12 (0.03%)
+
+   Ejemplo de filas duplicadas:
+       age          job  marital education default housing loan    contact month day_of_week  duration  campaign  pdays  previous     poutcome  emp.var.rate  cons.price.idx  cons.conf.idx  euribor3m  nr.employed   y
+1265    39  blue-collar  married  basic.6y      no      no   no  telephone   may         thu       124         1    999         0  nonexistent        1.1000         93.9940       -36.4000     4.8550    5191.0000  no
+1266    39  blue-collar  married  basic.6y      no      no   no  telephone   may         thu       124         1    999         0  nonexistent        1.1000         93.9940       -36.4000     4.8550    5191.0000  no
+12260   36      retired  married   unknown      no      no   no  telephone   jul         thu        88         1    999         0  nonexistent        1.4000         93.9180       -42.7000     4.9660    5228.1000  no
+12261   36      retired  married   unknown      no      no   no  telephone   jul         thu        88         1    999         0  nonexistent        1.4000         93.9180       -42.7000     4.9660    5228.1000  no
+
+==========================================================================================
+  4. VALORES 'UNKNOWN' Y CÓDIGOS ESPECIALES
+==========================================================================================
+
+   4.1 Proporción de 'unknown' por columna categórica:
+   ------------------------------------------------------------
+   ✅ OK | job                  →    330 unknowns (  0.80%)
+   ✅ OK | marital              →     80 unknowns (  0.19%)
+   ✅ OK | education            →  1,731 unknowns (  4.20%)
+   ⚠️  CRÍTICO | default              →  8,597 unknowns ( 20.87%)
+   ✅ OK | housing              →    990 unknowns (  2.40%)
+   ✅ OK | loan                 →    990 unknowns (  2.40%)
+
+   4.2 Código especial pdays = 999 (cliente nunca contactado previamente):
+       39,673 registros (96.32%)
+
+==========================================================================================
+  5. ESTADÍSTICAS DESCRIPTIVAS — Variables Numéricas
+==========================================================================================
+                    count      mean   mediana      std       min       25%       50%       75%       max  asimetría  curtosis     rango       CV%
+age            41188.0000   40.0240   38.0000  10.4210   17.0000   32.0000   38.0000   47.0000   98.0000     0.7850    0.7910   81.0000   26.0370
+duration       41188.0000  258.2850  180.0000 259.2790    0.0000  102.0000  180.0000  319.0000 4918.0000     3.2630   20.2480 4918.0000  100.3850
+campaign       41188.0000    2.5680    2.0000   2.7700    1.0000    1.0000    2.0000    3.0000   56.0000     4.7630   36.9800   55.0000  107.8840
+pdays          41188.0000  962.4750  999.0000 186.9110    0.0000  999.0000  999.0000  999.0000  999.0000    -4.9220   22.2290  999.0000   19.4200
+previous       41188.0000    0.1730    0.0000   0.4950    0.0000    0.0000    0.0000    0.0000    7.0000     3.8320   20.1090    7.0000  286.1310
+emp.var.rate   41188.0000    0.0820    1.1000   1.5710   -3.4000   -1.8000    1.1000    1.4000    1.4000    -0.7240   -1.0630    4.8000 1918.4830
+cons.price.idx 41188.0000   93.5760   93.7490   0.5790   92.2010   93.0750   93.7490   93.9940   94.7670    -0.2310   -0.8300    2.5660    0.6190
+cons.conf.idx  41188.0000  -40.5030  -41.8000   4.6280  -50.8000  -42.7000  -41.8000  -36.4000  -26.9000     0.3030   -0.3590   23.9000   11.4270
+euribor3m      41188.0000    3.6210    4.8570   1.7340    0.6340    1.3440    4.8570    4.9610    5.0450    -0.7090   -1.4070    4.4110   47.8960
+nr.employed    41188.0000 5167.0360 5191.0000  72.2520 4963.6000 5099.1000 5191.0000 5228.1000 5228.1000    -1.0440   -0.0040  264.5000    1.3980
+
+==========================================================================================
+  6. DETECCIÓN DE OUTLIERS (método IQR × 1.5)
+==========================================================================================
+
+   Variable                               Q1         Q3        IQR    Lím.Inf    Lím.Sup  #Outliers  %Outliers
+   ----------------------------------------------------------------------------------------------------
+   age                                32.000     47.000     15.000      9.500     69.500        469      1.14%
+   duration                          102.000    319.000    217.000   -223.500    644.500      2,963      7.19% ⚠️
+   campaign                            1.000      3.000      2.000     -2.000      6.000      2,406      5.84% ⚠️
+   pdays                             999.000    999.000      0.000    999.000    999.000      1,515      3.68%
+   previous                            0.000      0.000      0.000      0.000      0.000      5,625     13.66% ⚠️
+   emp.var.rate                       -1.800      1.400      3.200     -6.600      6.200          0      0.00%
+   cons.price.idx                     93.075     93.994      0.919     91.697     95.373          0      0.00%
+   cons.conf.idx                     -42.700    -36.400      6.300    -52.150    -26.950        447      1.09%
+   euribor3m                           1.344      4.961      3.617     -4.081     10.386          0      0.00%
+   nr.employed                      5099.100   5228.100    129.000   4905.600   5421.600          0      0.00%
+
+==========================================================================================
+  7. DISTRIBUCIÓN DE VARIABLES CATEGÓRICAS
+==========================================================================================
+
+   📊 job (12 valores únicos):
+      admin.                    → 10,422  ( 25.3%) ████████████
+      blue-collar               →  9,254  ( 22.5%) ███████████
+      technician                →  6,743  ( 16.4%) ████████
+      services                  →  3,969  (  9.6%) ████
+      management                →  2,924  (  7.1%) ███
+      retired                   →  1,720  (  4.2%) ██
+      entrepreneur              →  1,456  (  3.5%) █
+      self-employed             →  1,421  (  3.5%) █
+      housemaid                 →  1,060  (  2.6%) █
+      unemployed                →  1,014  (  2.5%) █
+      student                   →    875  (  2.1%) █
+      unknown                   →    330  (  0.8%) 
+
+   📊 marital (4 valores únicos):
+      married                   → 24,928  ( 60.5%) ██████████████████████████████
+      single                    → 11,568  ( 28.1%) ██████████████
+      divorced                  →  4,612  ( 11.2%) █████
+      unknown                   →     80  (  0.2%) 
+
+   📊 education (8 valores únicos):
+      university.degree         → 12,168  ( 29.5%) ██████████████
+      high.school               →  9,515  ( 23.1%) ███████████
+      basic.9y                  →  6,045  ( 14.7%) ███████
+      professional.course       →  5,243  ( 12.7%) ██████
+      basic.4y                  →  4,176  ( 10.1%) █████
+      basic.6y                  →  2,292  (  5.6%) ██
+      unknown                   →  1,731  (  4.2%) ██
+      illiterate                →     18  (  0.0%) 
+
+   📊 default (3 valores únicos):
+      no                        → 32,588  ( 79.1%) ███████████████████████████████████████
+      unknown                   →  8,597  ( 20.9%) ██████████
+      yes                       →      3  (  0.0%) 
+
+   📊 housing (3 valores únicos):
+      yes                       → 21,576  ( 52.4%) ██████████████████████████
+      no                        → 18,622  ( 45.2%) ██████████████████████
+      unknown                   →    990  (  2.4%) █
+
+   📊 loan (3 valores únicos):
+      no                        → 33,950  ( 82.4%) █████████████████████████████████████████
+      yes                       →  6,248  ( 15.2%) ███████
+      unknown                   →    990  (  2.4%) █
+
+   📊 contact (2 valores únicos):
+      cellular                  → 26,144  ( 63.5%) ███████████████████████████████
+      telephone                 → 15,044  ( 36.5%) ██████████████████
+
+   📊 month (10 valores únicos):
+      may                       → 13,769  ( 33.4%) ████████████████
+      jul                       →  7,174  ( 17.4%) ████████
+      aug                       →  6,178  ( 15.0%) ███████
+      jun                       →  5,318  ( 12.9%) ██████
+      nov                       →  4,101  ( 10.0%) ████
+      apr                       →  2,632  (  6.4%) ███
+      oct                       →    718  (  1.7%) 
+      sep                       →    570  (  1.4%) 
+      mar                       →    546  (  1.3%) 
+      dec                       →    182  (  0.4%) 
+
+   📊 day_of_week (5 valores únicos):
+      thu                       →  8,623  ( 20.9%) ██████████
+      mon                       →  8,514  ( 20.7%) ██████████
+      wed                       →  8,134  ( 19.8%) █████████
+      tue                       →  8,090  ( 19.6%) █████████
+      fri                       →  7,827  ( 19.0%) █████████
+
+   📊 poutcome (3 valores únicos):
+      nonexistent               → 35,563  ( 86.3%) ███████████████████████████████████████████
+      failure                   →  4,252  ( 10.3%) █████
+      success                   →  1,373  (  3.3%) █
+
+   📊 y (2 valores únicos):
+      no                        → 36,548  ( 88.7%) ████████████████████████████████████████████
+      yes                       →  4,640  ( 11.3%) █████
+
+==========================================================================================
+  8. ANÁLISIS DE LA VARIABLE TARGET — y
+==========================================================================================
+   Total registros: 41,188
+      no: 36,548 (88.73%)
+     yes:  4,640 (11.27%)
+
+   Ratio de desbalance (mayoría/minoría): 7.88:1
+   ⚠️  DESBALANCE SIGNIFICATIVO — Se recomienda SMOTE, class_weight, o undersampling
+
+==========================================================================================
+  9. CORRELACIONES CON LA TARGET (y → numérica)
+==========================================================================================
+
+   Variable                             Correlación       Fuerza    Dirección
+   ---------------------------------------------------------------------------
+   duration                                  0.4053       FUERTE   POSITIVA ↑
+   nr.employed                              -0.3547       FUERTE   NEGATIVA ↓
+   pdays                                    -0.3249       FUERTE   NEGATIVA ↓
+   euribor3m                                -0.3078       FUERTE   NEGATIVA ↓
+   emp.var.rate                             -0.2983     MODERADA   NEGATIVA ↓
+   previous                                  0.2302     MODERADA   POSITIVA ↑
+   cons.price.idx                           -0.1362        DÉBIL   NEGATIVA ↓
+   campaign                                 -0.0664        DÉBIL   NEGATIVA ↓
+   cons.conf.idx                             0.0549        DÉBIL   POSITIVA ↑
+   age                                       0.0304        DÉBIL   POSITIVA ↑
+
+==========================================================================================
+  10. DETECCIÓN DE MULTICOLINEALIDAD (|r| > 0.7)
+==========================================================================================
+
+   ⚠️  Pares con correlación alta (|r| > 0.7):
+   Variable 1                          Variable 2                                 r
+   --------------------------------------------------------------------------------
+   emp.var.rate                        euribor3m                             0.9722
+   euribor3m                           nr.employed                           0.9452
+   emp.var.rate                        nr.employed                           0.9070
+   emp.var.rate                        cons.price.idx                        0.7753
+
+==========================================================================================
+  11. ANÁLISIS DE CONSISTENCIA Y REGLAS DE NEGOCIO
+==========================================================================================
+   11.1 Registros con duration=0 Y y='yes': 0
+        ✅ Consistente — no hay conversiones sin llamada
+
+   11.2 Registros con duration=0 (llamada no realizada): 4 (0.01%)
+
+   11.3 previous=0 con pdays≠999 (inconsistencia): 0
+        ✅ Consistente
+
+   11.4 pdays=999 con previous>0 (inconsistencia): 4110
+        ⚠️  Inconsistencia — marcado como no contactado pero tiene contactos previos
+   11.5 ✅ age: sin valores negativos
+   11.5 ✅ duration: sin valores negativos
+   11.5 ✅ campaign: sin valores negativos
+   11.5 ✅ pdays: sin valores negativos
+   11.5 ✅ previous: sin valores negativos
+
+   11.6 Rango de edad: 17 — 98
+        ✅ Rango de edad razonable
+
+==========================================================================================
+  12. RESUMEN EJECUTIVO DE LA AUDITORÍA
+==========================================================================================
+
+   ⚠️  HALLAZGOS QUE REQUIEREN ATENCIÓN (5):
+   1. Filas duplicadas exactas: 12 (0.03%)
+   2. 'default' tiene 20.9% de valores 'unknown'
+   3. Desbalance de clases significativo (ratio 7.9:1)
+   4. duration=0 en 4 registros (llamadas no realizadas)
+   5. 4 par(es) de variables con alta multicolinealidad (|r|>0.7)
+
+   MÉTRICAS GENERALES:
+   ├─ Filas: 41,188
+   ├─ Columnas: 21
+   ├─ Numéricas: 10
+   ├─ Categóricas: 11
+   ├─ NaN totales: 0
+   ├─ Duplicados exactos: 12
+   ├─ Target 'yes': 4,640 (11.27%)
+   ├─ Target 'no': 36,548 (88.73%)
+   └─ Ratio desbalance: 7.88:1
+
+==========================================================================================
+  FIN DE LA AUDITORÍA — DATOS NO MODIFICADOS
+==========================================================================================

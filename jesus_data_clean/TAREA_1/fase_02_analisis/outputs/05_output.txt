@@ -1,0 +1,239 @@
+====================================================================================================
+  SUB-TAREA 1.4 ÔÇö IMPACTO DE LA CAMPA├æA EN LA SUSCRIPCI├ôN
+  Conversi├│n global: 11.27% (4,640/41,188)
+====================================================================================================
+
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+  1. N├ÜMERO DE CONTACTOS EN ESTA CAMPA├æA (campaign)
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+
+   Contactos        n    yes    Conv%  Conv.Acum
+  ----------------------------------------------
+           1   17,642  2,300   13.04%     13.04%
+           2   10,570  1,211   11.46%     12.45%
+           3    5,341    574   10.75%     12.17%
+           4    2,651    249    9.39%     11.97%
+           5    1,599    120    7.50%     11.78%
+           6      979     75    7.66%     11.68%
+           7      629     38    6.04%     11.59%
+           8      400     17    4.25%     11.51%
+           9      283     17    6.01%     11.48%
+          10      225     12    5.33%     11.44%
+          11      177     12    6.78%     11.42%
+          12      125      3    2.40%     11.39%
+          13       92      4    4.35%     11.38%
+          14       69      1    1.45%     11.36%
+         15+      406      7    1.72%     11.27%
+
+  AN├üLISIS DE SATURACI├ôN:
+    Ôëñ1 contactos: 13.04% (n=17,642) | >1: 9.94% (n=23,546) | ╬ö=-3.10pp
+    Ôëñ2 contactos: 12.45% (n=28,212) | >2: 8.70% (n=12,976) | ╬ö=-3.74pp
+    Ôëñ3 contactos: 12.17% (n=33,553) | >3: 7.27% (n=7,635) | ╬ö=-4.91pp
+    Ôëñ5 contactos: 11.78% (n=37,803) | >5: 5.49% (n=3,385) | ╬ö=-6.29pp
+    Ôëñ7 contactos: 11.59% (n=39,411) | >7: 4.11% (n=1,777) | ╬ö=-7.48pp
+    Ôëñ10 contactos: 11.44% (n=40,319) | >10: 3.11% (n=869) | ╬ö=-8.33pp
+
+  Spearman (campaign ├ù y): ¤ü=-0.0637, p=2.8910e-38
+  ÔåÆ A m├ís contactos, MENOS probabilidad de suscripci├│n (relaci├│n negativa)
+
+  INSIGHT: El punto de saturaci├│n est├í alrededor de 3 contactos.
+           Despu├®s de 3 intentos, la conversi├│n cae de 12.17% a 7.27%.
+           Despu├®s de 10, baja a ~3%. Insistir m├ís all├í es contraproducente.
+
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+  2. MES DEL ├ÜLTIMO CONTACTO (month)
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+
+  Mes           n    %Vol    yes    Conv%   vs.Media
+  --------------------------------------------------
+  mar         546    1.3%    276   50.55%    +39.28pp Ôÿà
+  apr       2,632    6.4%    539   20.48%     +9.21pp
+  may      13,769   33.4%    886    6.43%     -4.83pp Ô¼ç
+  jun       5,318   12.9%    559   10.51%     -0.75pp
+  jul       7,174   17.4%    649    9.05%     -2.22pp
+  aug       6,178   15.0%    655   10.60%     -0.66pp
+  sep         570    1.4%    256   44.91%    +33.65pp Ôÿà
+  oct         718    1.7%    315   43.87%    +32.61pp Ôÿà
+  nov       4,101   10.0%    416   10.14%     -1.12pp
+  dec         182    0.4%     89   48.90%    +37.64pp Ôÿà
+
+  Chi┬▓ (month ├ù y): ¤ç┬▓=3101.15, p=0.0000e+00
+  ÔåÆ La relaci├│n mesÔÇôsuscripci├│n es SIGNIFICATIVA
+
+  INSIGHT:
+    Ôö£ÔöÇ Mar, Sep, Oct, Dec: conversiones >40% pero con POCO volumen (<750 llamadas)
+    Ôö£ÔöÇ May: es el mes con M├üS volumen (33.4%) pero PEOR conversi├│n (6.43%)
+    ÔööÔöÇ Patr├│n: volumen inversamente proporcional a la conversi├│n.
+       Los meses de baja actividad pueden coincidir con mejores condiciones econ├│micas.
+
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+  3. D├ìA DE LA SEMANA DEL ├ÜLTIMO CONTACTO
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+
+  D├¡a           n    yes    Conv%
+  --------------------------------
+  mon       8,514    847    9.95%
+  tue       8,090    953   11.78%
+  wed       8,134    949   11.67%
+  thu       8,623  1,045   12.12%
+  fri       7,827    846   10.81%
+
+  Chi┬▓ (day ├ù y): ¤ç┬▓=26.14, p=2.9585e-05
+  ÔåÆ La relaci├│n d├¡aÔÇôsuscripci├│n es SIGNIFICATIVA
+
+  INSIGHT: La diferencia entre d├¡as es moderada (9.95%ÔÇô12.12%).
+           Jueves es el mejor d├¡a, lunes el peor. El volumen es similar entre d├¡as.
+
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+  4. DURACI├ôN DE LA LLAMADA vs SUSCRIPCI├ôN
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+
+  ÔÜá´©Å  NOTA: 'duration' no se conoce ANTES de la llamada.
+       No puede usarse como predictor en producci├│n, pero es el indicador
+       m├ís fuerte de inter├®s del cliente durante la llamada.
+
+  Bucket              Rango (seg)        n   %Total    yes    Conv%
+  -----------------------------------------------------------------
+  < 1 min               [0s, 60s)    4,181    10.2%      1    0.02%
+  1ÔÇô3 min             [60s, 180s)   16,407    39.8%    557    3.39%
+  3ÔÇô5 min            [180s, 300s)    9,350    22.7%    951   10.17%
+  5ÔÇô10 min           [300s, 600s)    7,772    18.9%  1,441   18.54%
+  10ÔÇô20 min         [600s, 1200s)    2,963     7.2%  1,369   46.20%
+  20+ min         [1200s, 99999s)      515     1.3%    321   62.33%
+
+  Spearman (duration ├ù y): ¤ü=0.3488, p=0.0000e+00
+  ÔåÆ Correlaci├│n FUERTE y POSITIVA: llamadas m├ís largas = m├ís suscripciones
+
+  INSIGHT: La conversi├│n escala dram├íticamente con la duraci├│n:
+    < 1 min  ÔåÆ 0.02% (pr├ícticamente 0 ÔÇö llamadas no efectivas)
+    1-3 min  ÔåÆ 3.39%
+    5-10 min ÔåÆ 18.54%
+    20+ min  ÔåÆ 62.33% (2 de cada 3 suscriben)
+
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+  5. M├ëTODO DE CONTACTO
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+  telephone   :   5.23% conversi├│n (n=15,044, 36.5% del total)
+  cellular    :  14.74% conversi├│n (n=26,144, 63.5% del total)
+
+  Chi┬▓ (contact ├ù y): ¤ç┬▓=862.32, p=1.5260e-189
+
+  INSIGHT: Celular convierte 2.8├ù m├ís que tel├®fono fijo (14.74% vs 5.23%).
+           Los clientes contactados por celular son m├ís accesibles y receptivos.
+
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+  6. HISTORIAL DE CAMPA├æAS ANTERIORES (pdays, previous, poutcome)
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+
+  6.1 RESULTADO DE CAMPA├æA ANTERIOR (poutcome):
+    success        :  65.11% (n=1,373)
+    failure        :  14.23% (n=4,252)
+    nonexistent    :   8.83% (n=35,563)
+    Chi┬▓ (poutcome ├ù y): ¤ç┬▓=4230.52, p=0.0000e+00
+
+  6.2 D├ìAS DESDE EL ├ÜLTIMO CONTACTO PREVIO (pdays):
+    pdays=999 (nunca contactado):  9.26% (n=39,673)
+    pdaysÔëá999 (contactado antes):  63.83% (n=1,515)
+    Diferencia: +54.57pp
+
+    Detalle por rango de pdays (solo contactados previamente):
+      0-7 d├¡as       : 65.71% (n=1,117)
+      7-14 d├¡as      : 58.86% (n=316)
+      14-30 d├¡as     : 57.32% (n=82)
+
+  6.3 N├ÜMERO DE CONTACTOS EN CAMPA├æAS ANTERIORES (previous):
+    previous=0:   8.83% (n=35,563)
+    previous=1:  21.20% (n=4,561)
+    previous=2:  46.42% (n=754)
+    previous=3:  59.26% (n=216)
+    previous=4:  54.29% (n=70)
+    previous=5:  72.22% (n=18)
+    previous=6:  60.00% (n=5)
+    previous=7:   0.00% (n=1)
+
+  INSIGHT:
+    Ôö£ÔöÇ poutcome=success es el MEJOR PREDICTOR del dataset: 65.11% de conversi├│n
+    Ôö£ÔöÇ Los clientes previamente contactados (pdaysÔëá999) convierten 63.83% vs 9.26%
+    ÔööÔöÇ El historial previo es M├üS importante que cualquier variable demogr├ífica
+
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+  7. CONTEXTO MACROECON├ôMICO vs SUSCRIPCI├ôN
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+
+  Variable                        Corr(y)    Mean(yes)     Mean(no)      p-value   Sig.
+  ------------------------------------------------------------------------------------
+  emp.var.rate                    -0.2983      -1.2334       0.2489     0.00e+00     S├ì
+  cons.price.idx                  -0.1362      93.3544      93.6038    9.57e-136     S├ì
+  cons.conf.idx                   +0.0549     -39.7898     -40.5931     5.90e-17     S├ì
+  euribor3m                       -0.3078       2.1231       3.8115     0.00e+00     S├ì
+  nr.employed                     -0.3547    5095.1160    5176.1666     0.00e+00     S├ì
+
+  INTERPRETACI├ôN DEL CONTEXTO MACROECON├ôMICO:
+  Ôö£ÔöÇ TODAS las 5 variables macro son estad├¡sticamente significativas (p Ôëê 0)
+  Ôö£ÔöÇ euribor3m: Los clientes suscriben m├ís cuando el euribor es BAJO (mean 2.12 vs 3.81)
+  Ôö£ÔöÇ emp.var.rate: Suscripciones aumentan con empleo NEGATIVO (mean -1.23 vs +0.25)
+  Ôö£ÔöÇ nr.employed: M├ís suscripciones con MENOS empleo total (5095 vs 5176)
+  Ôö£ÔöÇ cons.price.idx: Ligeramente m├ís suscripciones con precios m├ís bajos
+  ÔööÔöÇ cons.conf.idx: La confianza del consumidor tiene efecto d├®bil (+0.055)
+
+  CONCLUSI├ôN MACRO: Los dep├│sitos a plazo se contratan M├üS en periodos de
+  incertidumbre econ├│mica (euribor bajo, empleo en descenso). Esto es l├│gico:
+  en recesi├│n, los dep├│sitos son refugio seguro para el ahorro.
+
+  ALERTA DE MULTICOLINEALIDAD ENTRE VARIABLES MACRO:
+    emp.var.rate         ├ù cons.price.idx      : r=0.7753 ÔÜá´©Å ALTA
+    emp.var.rate         ├ù euribor3m           : r=0.9722 ÔÜá´©Å ALTA
+    emp.var.rate         ├ù nr.employed         : r=0.9070 ÔÜá´©Å ALTA
+    euribor3m            ├ù nr.employed         : r=0.9452 ÔÜá´©Å ALTA
+  ÔåÆ emp.var.rate, euribor3m y nr.employed son casi la misma variable (r>0.90)
+    Para modelado: usar solo 1 o aplicar PCA.
+
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+  8. RESUMEN DE TODOS LOS TESTS ESTAD├ìSTICOS
+ÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûêÔûê
+
+  Variable                             Test     Estad├¡stico         p-value       Resultado
+  ----------------------------------------------------------------------------------------
+  duration                     Mann-Whitney     138,794,276        0.00e+00   SIGNIFICATIVO
+  campaign                     Mann-Whitney      75,428,808        3.42e-38   SIGNIFICATIVO
+  emp.var.rate                 Mann-Whitney      48,033,797        0.00e+00   SIGNIFICATIVO
+  cons.price.idx               Mann-Whitney      66,041,972       9.57e-136   SIGNIFICATIVO
+  cons.conf.idx                Mann-Whitney      91,117,812        5.90e-17   SIGNIFICATIVO
+  euribor3m                    Mann-Whitney      43,501,742        0.00e+00   SIGNIFICATIVO
+  nr.employed                  Mann-Whitney      42,565,804        0.00e+00   SIGNIFICATIVO
+  month                                Chi┬▓         3101.15        0.00e+00   SIGNIFICATIVO
+  day_of_week                          Chi┬▓           26.14        2.96e-05   SIGNIFICATIVO
+  contact                              Chi┬▓          862.32       1.53e-189   SIGNIFICATIVO
+  poutcome                             Chi┬▓         4230.52        0.00e+00   SIGNIFICATIVO
+
+  Correlaciones Spearman:
+    campaign ├ù y: ¤ü=-0.0637 (p=2.89e-38) ÔåÆ M├ís contactos = MENOS suscripci├│n
+    duration ├ù y: ¤ü=0.3488 (p=0.00e+00) ÔåÆ M├ís duraci├│n = M├üS suscripci├│n
+
+====================================================================================================
+  RESUMEN ÔÇö Sub-tarea 1.4 Completada
+====================================================================================================
+
+  FACTORES DE CAMPA├æA ORDENADOS POR IMPACTO:
+
+  1. poutcome=success     ÔåÆ 65.11% conversi├│n (el mejor predictor absoluto)
+  2. pdaysÔëá999 (previo)   ÔåÆ 63.83% conversi├│n (clientes con historial previo)
+  3. duration (20+ min)   ÔåÆ 62.33% conversi├│n (pero no es predictor a priori)
+  4. contact=cellular     ÔåÆ 14.74% vs 5.23% telephone (2.8├ù mejor)
+  5. month (mar/sep/oct)  ÔåÆ >40% conversi├│n (pero bajo volumen)
+  6. campaign Ôëñ3          ÔåÆ 12.17% vs 7.27% con >3 contactos
+  7. Macro (euribor bajo) ÔåÆ Entorno econ├│mico favorable a dep├│sitos
+  8. day_of_week          ÔåÆ Diferencia moderada (thu mejor, mon peor)
+
+  RECOMENDACIONES INICIALES PARA FUTURAS CAMPA├æAS:
+  Ôö£ÔöÇ Priorizar clientes con ├®xito en campa├▒as anteriores
+  Ôö£ÔöÇ No superar 3 intentos de contacto por cliente
+  Ôö£ÔöÇ Usar celular como m├®todo de contacto preferido
+  Ôö£ÔöÇ Concentrar esfuerzos en meses de menor volumen pero mayor conversi├│n
+  ÔööÔöÇ Monitorear el entorno macroecon├│mico (euribor, empleo) para timing
+
+  DATOS NO MODIFICADOS ÔÇö Solo lectura.
+
+====================================================================================================
+  FIN ÔÇö Sub-tarea 1.4: Impacto de la Campa├▒a
+====================================================================================================
