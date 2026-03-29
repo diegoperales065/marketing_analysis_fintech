@@ -1,9 +1,85 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Mi web</title>
+﻿<!DOCTYPE html>
+<html lang="es">
+<hea
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fintech Predict</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hola, funciona 🚀</h1>
+  <main class="panel">
+    <header class="panel__header">
+      <div>
+        <h1>Predicción de Suscripción</h1>
+        <p>Fintech AI score para predicciones de suscripción.</p>
+      </div>
+    </header>
+<form id="predictForm" class="form" autocomplete="off">
+
+    <label class="field" for="education_level">
+        <span>Nivel de Educación</span>
+        <select id="education_level" required>
+            <option value="undisclosed">No Divulgado</option>
+            <option value="illiterate">Sin Educación</option>
+            <option value="basic.4y">Básico 4 años</option>
+            <option value="basic.6y">Básico 6 años</option>
+            <option value="basic.9y"> Básico 9 años</option>
+            <option value="high.school">Bachiller</option>
+            <option value="professional.course">Curso Profesional</option>
+          <option value="university.degree">Grado Universitario</option>
+
+        </select>
+      </label>
+      <label class="field" for="contact_method">
+        <span>Método de Contacto</span>
+        <select id="contact_method" required>
+          <option value="telephone">Teléfono</option>
+          <option value="cellular">Celular</option>
+        </select>
+      </label>
+
+      <label class="field" for="contact_month">
+        <span>Mes de Contacto</span>
+        <select id="contact_month" required>
+          <option value="may">Mayo</option>
+          <option value="jul">Julio</option>
+          <option value="aug">Agosto</option>
+        </select>
+      </label>
+
+      <label class="field" for="is_new_campaign_client">
+        <span>Nuevo Cliente Campaña</span>
+        <select id="is_new_campaign_client" required>
+          <option value="yes">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </label>
+
+      <label class="field" for="previous_campaign_outcome">
+        <span>Resultado Campaña Previa</span>
+        <select id="previous_campaign_outcome" required>
+          <option value="nonexistent">No Existe</option>
+          <option value="failure">Fracaso</option>
+          <option value="success">Éxito</option>
+          <option value="other">Otro</option>
+        </select>
+      </label>
+
+      <button type="submit" class="primary">Calcular Predicción</button>
+    </form>
+
+    <div id="result" class="result" aria-live="polite" hidden></div>
+  </main>
+
+  <div id="overlay" class="overlay" aria-hidden="true">
+    <div class="loader"></div>
+  </div>
+  <div id="toast-container" class="toast-container" aria-live="assertive"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+<script src="script.js"></script>
 </body>
 </html>
