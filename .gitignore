@@ -205,3 +205,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Outputs, scripts y figuras generadas (TFM)
+/jesus_data_clean/informes/figuras/
+/jesus_data_clean/scripts/
+/jesus_data_clean/outputs/
