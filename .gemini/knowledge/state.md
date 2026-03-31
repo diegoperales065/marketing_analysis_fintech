@@ -1,25 +1,24 @@
 # Estado del Proyecto — Marketing Analysis Fintech
 
-## Última actualización: 16/03/2026 12:25
+## Última actualización: 31/03/2026 13:27
 
-### Tarea 1 — Análisis de Datos: ✅ COMPLETADA
+### Reorganización de Scripts: ✅ COMPLETADO (31/03/2026)
 
 **Trabajo realizado:**
-- Reorganización de `jesus_data_clean` en `fase_01_unknowns` + `fase_02_tarea1_completa`
-- 3 nuevos scripts/notebooks (03, 04, 05) para cerrar sub-tareas 1.2, 1.3, 1.4
-- Todos los scripts ejecutados sin errores, outputs generados
+- Migrados 10 scripts Python + 7 outputs TXT de `scripts/` raíz → `jesus_data_clean/`
+- Estructura profesional de 4 subdirectorios de scripts + 3 de outputs
+- READMEs profesionales para `scripts/` y `outputs/`
+- README principal de `jesus_data_clean/` actualizado con estructura completa
+- Carpeta `scripts/` raíz limpia (solo funciones_limpieza_y_analisis originales)
 
-**Archivos modificados:**
-- `jesus_data_clean/README.md` — actualizado con nueva estructura
-- `jesus_data_clean/fase_02_tarea1_completa/scripts/03_estadisticas_descriptivas.py` — NUEVO
-- `jesus_data_clean/fase_02_tarea1_completa/scripts/04_relacion_demografica_suscripcion.py` — NUEVO  
-- `jesus_data_clean/fase_02_tarea1_completa/scripts/05_impacto_campana.py` — NUEVO
+### Informe Tareas 1+2 v4: ✅ COMPLETADO (31/03/2026)
 
-**Decisiones clave:**
-- Unknowns: renombrado semántico (Jesús) es la verdad absoluta
-- No se crea CSV limpio — solo análisis de lectura
-- Duration buckets: [a, b) cerrado-abierto para evitar ambigüedad
-- Variables macro: todas significativas, euribor bajo → más suscripciones
+**Archivo final:** `jesus_data_clean/informes/Informe_Tarea1_y_Tarea2_Final_v4.docx` (3.3MB)
+- 17 gráficos profesionales 300 DPI
+- 26 tablas preservadas
+- Tabla Stack corregida (scipy/fuzzywuzzy/plotly eliminadas)
+- Metodología reestructurada (funciones usadas vs disponibles)
+- 0 menciones residuales de librerías fantasma
 
 ### Pendiente:
-- Tareas 2-5 del TFM
+- Tareas 3-5 del TFM (modelado, dashboard, recomendaciones)
