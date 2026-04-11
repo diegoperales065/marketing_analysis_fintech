@@ -1,5 +1,3 @@
-Aquí tienes el documento actualizado incluyendo la nueva sección de **Ingeniería de Características** para las variables que has creado, manteniendo la estructura y los nombres de columnas anteriores.
-
 ---
 
 # 🏦 Análisis de Marketing Bancario y Contexto Económico
