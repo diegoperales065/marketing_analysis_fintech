@@ -210,3 +210,7 @@ __marimo__/
 /jesus_data_clean/informes/figuras/
 /jesus_data_clean/scripts/
 /jesus_data_clean/outputs/
+
+# AI Agents & Assistants
+.agents/
+.gemini/
