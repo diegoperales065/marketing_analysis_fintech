@@ -6,7 +6,7 @@
 
 ---
 
-## 📌 Descripción del Proyecto
+## 📌 Descripción del Proyecto 
 
 Análisis de los datos de campañas de marketing de una empresa Fintech para conseguir **identificar patrones, tendencias y factores** que influyen en que un cliente acabe contratando un **depósito a plazo**.
 
