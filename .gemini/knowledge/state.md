@@ -40,5 +40,13 @@
 - Metodología reestructurada (funciones usadas vs disponibles)
 - 0 menciones residuales de librerías fantasma
 
-### Pendiente:
-- Tareas 4-5 del TFM (dashboard, recomendaciones)
+### Dashboard con KPIs y sugerencias finales ✅ COMPLETADO  (31/03/2026)
+
+**Dashboard:**
+- 3 métricas principales
+- Filtros / Segmentadores de datos interactivos
+- Análisis de gráficos y métricas secundarias (dividido en 3 partes)
+
+**Sugerencias:**
+- 6 recomendaciones estratégicas para optimizar las futuras campañas
+
